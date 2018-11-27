@@ -1,4 +1,4 @@
-// Youtube API key
+// Youtube API
 const API_KEY_YOUTUBE = "AIzaSyBGSidh8WB4tOLGGx_xOEa75yAya0FW62Q";
 
 // do a video list
@@ -14,7 +14,7 @@ function showVideo(title, videoId, thumbnails) {
 $("#submit").click(function() {
     var keyword = $("#keyword").val();
     var type = $("#options").val();
-    console.log(keyword)
+    console.log(keyword) 
     console.log(type)
     const URL = `https://content.googleapis.com/youtube/v3/search?part=snippet&maxResults=21&q=${keyword}&type=video&key=${API_KEY_YOUTUBE}`;
     if(type == "Video") {
@@ -22,6 +22,7 @@ $("#submit").click(function() {
             console.log(items)
             // get an information to do video list
             items.map(function(value) {
+                // show data in index
                 $("#showVideo").append(
                     showVideo(
                         value.snippet.title,
