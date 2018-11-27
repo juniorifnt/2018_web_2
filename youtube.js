@@ -22,7 +22,7 @@ $("#submit").click(function() {
             console.log(items)
             // get an information to do video list
             items.map(function(value) {
-                $("#videos").append(
+                $("#showVideo").append(
                     showVideo(
                         value.snippet.title,
                         value.id.videoId,
@@ -32,6 +32,6 @@ $("#submit").click(function() {
             });
         });
     } else {
-        console.log("type error");
+        console.log("type error")
     }
 })
