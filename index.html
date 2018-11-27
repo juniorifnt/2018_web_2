@@ -1,6 +1,11 @@
+<!-- PJ2 -->
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"> </script>
         <title>Final Project</title>
     </head>
     
@@ -11,34 +16,22 @@
             </header>
             
             <section>
-               
                     <div class="fieldcontainer">
                         <input type="keyword" id="keyword">
-                        <select>
-                            <option type="CustomSearch" id="CustomSearch">Custom Search</option>
-                            <option type="Video" id="Video">Video</option>
-                            <option type="CommentnReview" id="CommentnReview">Comment & Review</option>
-                          </select>
                         <br>
-                        <button type="submit" id="submit">Search</button>
-                    </div>
-              
-                
+                        <select id="options" >
+                            <option type="customSearch">Custom Search</option>
+                            <option type="video">Video</option>
+                            <option type="commentnReview">Comment & Review</option>
+                          </select>
+                        <button type="submit" id="submit" >Search</button>
+                    </div> 
             </section>
-            <script>
-                var keyword= $("keyword").val();
-                var type=$("option").val();
-                $("#submit").click(function(keyword,type){
-                    if(type=="Video"){
-                        $.get("");//url of api
-                    }else if(type=="CustomSearch"){
-                        $.get("");//url of api
-                    }else{
-                        $.get("");//url of api
-                    })
-                };
-            </script>
-            
         </div>
+
+        <div id="videos">
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="youtube.js"></script>
     </body>
 </html>
