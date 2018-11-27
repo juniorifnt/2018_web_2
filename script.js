@@ -1,5 +1,5 @@
 
-const API_KEY = "AIzaSyDnAu44JqxQYij5Ex9Bz9owB43DuX-SqSY";
+const API_KEY_SEARCH = "AIzaSyDnAu44JqxQYij5Ex9Bz9owB43DuX-SqSY";
 const cx = "006915378234751030454:8ur5gwuf5pg";
 
 function resultlist(title, link, detail) {
@@ -13,7 +13,9 @@ function resultlist(title, link, detail) {
 $("#submit").click(function() {
 	var keyword = $("#keyword").val()
     var type = $("#customSearch").val();
-    const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${cx}&q=${keyword}`;
+    console.log(keyword);
+    console.log(type);
+    const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY_SEARCH}&cx=${cx}&q=${keyword}`;
   	if(type == "#customSearch") {
   		$.get(URL, function({ items }, status) {
     		items.map(function(value) {
@@ -26,7 +28,7 @@ $("#submit").click(function() {
     		});
 		});
   	} else {
-  		console.log("type error")
+  		console.log("type error");
   	}
 	
 //$("#keyword").change(function() {

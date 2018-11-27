@@ -11,36 +11,27 @@ function showVideo(title, videoId, thumbnails) {
     </div>`;
 }
 
-//call a request for Youtube Data API
-function callYouTubeAPI(text) {
-    const URL = `https://content.googleapis.com/youtube/v3/search?part=snippet&maxResults=21&q=${text}&type=video&key=${API_KEY}`;
-    $.get(URL, function({ items }, status) {
-
-        // get an information to do video list
-        items.map(function(value) {
-            $("#videos").append(
-                showVideo(
-                    value.snippet.title,
-                    value.id.videoId,
-                    value.snippet.thumbnails
-                )
-            );
+$("#submit").click(function() {
+    var keyword = $("#keyword").val();
+    var type = $("#options").val();
+    console.log(keyword)
+    console.log(type)
+    const URL = `https://content.googleapis.com/youtube/v3/search?part=snippet&maxResults=21&q=${keyword}&type=video&key=${API_KEY}`;
+    if(type == "Video") {
+        $.get(URL, function({ items }, status) {
+            console.log(items)
+            // get an information to do video list
+            items.map(function(value) {
+                $("#videos").append(
+                    showVideo(
+                        value.snippet.title,
+                        value.id.videoId,
+                        value.snippet.thumbnails
+                    )
+                );
+            });
         });
-    });
-}
-
-$(document).ready(function() {
-    // click to search
-    $("#search-btn").click(function() {
-        const text = $("#search-input").val();
-        $("#videos").empty();
-        callYouTubeAPI(text);
-    });
-    
-    // input data for search
-    $("#search-input").change(function() {
-        const text = $(this).val();
-        $("#videos").empty();
-        callYouTubeAPI(text);
-    });
-});
+    } else {
+        console.log("type error");
+    }
+})

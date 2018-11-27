@@ -1,28 +1,13 @@
+<!-- PJ2 -->
 <!DOCTYPE HTML>
 <html>
 
-
-<style>
-#list{
-    margin-top: auto;
-    font-size: 30px;
-}
-#submit{
-display: block;
-width: 55px;
-height: 35px;
-border: 0;
-cursor: pointer;
-filter: alpha(opacity=65);
-opacity: 0.65;   
-}
-#results > div{
-  text-align: center;
-}
-
-
-</style>
+<html lang="en">
     <head>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"> </script>
         <title>Final Project</title>
     </head>
     
@@ -30,34 +15,28 @@ opacity: 0.65;
         <div id="container">
             <header>
                 <h1>Search</h1>
-                <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
             </header>
             
             <section>
-               
                     <div class="fieldcontainer">
                         <input type="keyword" id="keyword">
-                        <select>
-                            <option type="CustomSearch" id="CustomSearch">Custom Search</option>
-                            <option type="Video" id="Video">Video</option>
-                            <option type="CommentnReview" id="CommentnReview">Comment & Review</option>
-                          </select>
                         <br>
-                        <button type="submit" id="submit">Search</button>
-                    </div>
-              
-                
-            </section>
-            
-            
+                        <select id="options" >
+                            <option type="customSearch">Custom Search</option>
+                            <option type="video">Video</option>
+                            <option type="commentnReview">Comment & Review</option>
+                          </select>
+                        <button type="submit" id="submit" >Search</button>
+                    </div> 
+            </section>   
         </div>
-        <div id="showSearch"></div>
 
+        <div id="showSearch"></div>
         <script src="script.js"></script>
 
-            </script>
+        <div id="videos"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="youtube.js"></script>
+
     </body>
 </html>
