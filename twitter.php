@@ -3,10 +3,10 @@
     require "twitteroauth/autoload.php";
     use Abraham\TwitterOAuth\TwitterOAuth;
     
-    const APIKey = "DpV03fA4Ljw2pBeLaeHEReHSb";
-    const APISecretKey = "3UIxpuH80RQkskLW3rLPKrSgmGWgnku0uGSG1vTXS9KSOdY9Kf";
-    const AccessToken = "1066363490539995136-E0lD20m4hDZoIYFab3xswSZW0NC0yy";
-    const AccessTokenSecret ="7gFEJcbkalXk8OnoZ4IrcXWdaZrIdUk6u6bMpbMGL1gQh";
+    const APIKey = "Wtzb0I9jbMY4Ye2hINyRTI9JV";
+    const APISecretKey = "JQaV3pMaZayy7fW9ibyKVxoXMTCW6JbdvfeweMpzjP1rSC0BJ8";
+    const AccessToken = "1859145668-yKmxMWFE8ir92ZDU7jDAVIZ3ijJrxOd3BC83ip4";
+    const AccessTokenSecret ="YjfsRy3OsZ3rm770VslUSTWqQVarD7PrACNYN5xmFkgF8";
 
     function show($result){
         foreach($result->statuses as $key => $value){
@@ -31,7 +31,7 @@
               $twitter = new TwitterOAuth(APIKey,APISecretKey,AccessToken,AccessTokenSecret);
               return $twitter->get('search/tweets',$keyword);
     }
-
+   
     if(isset($_GET['key'])){
           $needed_data = array(
             "q" => $_GET['key'],

@@ -44,7 +44,7 @@ $("#keyword").change(function() {
     items.map(function(value) { 
           // show data in index
           $("#showVideo").append(
-            showSearch(
+            showVideo(
              value.snippet.title,
              value.id.videoId,
              value.snippet.thumbnails
