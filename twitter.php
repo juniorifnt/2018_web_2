@@ -26,12 +26,11 @@
             ";
         }
     }
-
     function search(array $keyword){
               $twitter = new TwitterOAuth(APIKey,APISecretKey,AccessToken,AccessTokenSecret);
               return $twitter->get('search/tweets',$keyword);
     }
-   
+
     if(isset($_GET['key'])){
           $needed_data = array(
             "q" => $_GET['key'],

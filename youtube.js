@@ -39,17 +39,3 @@ $("#submit").click(function() {
         console.log("type error")
     }
 })
-/*$("#keyword").change(function() {
-    //const text = $(this).val();
-    $("#showVideo").empty();
-    items.map(function(value) { 
-          // show data in index
-          $("#showVideo").append(
-            showVideo(
-             value.snippet.title,
-             value.id.videoId,
-             value.snippet.thumbnails
-            )
-          );
-        });
-  });*/

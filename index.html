@@ -38,8 +38,7 @@
                         <button type="submit" id="submit" class="btn btn-info">Search</button>
                     </div> 
             </section> 
-          
-     
+           
 
         <!-- display -->
         <!--<div id="showResult"></div>-->
@@ -49,6 +48,7 @@
         
         <script src="youtube.js"></script>
         <script src="search.js" ></script>    
+        
 
         <script type="text/javascript">
             $("#submit").on("click",function(){
@@ -60,8 +60,11 @@
                 var xhttp = new XMLHttpRequest();
                 if(type == "Comment & Review") {
                     xhttp.onreadystatechange = function() {
+                        $("#showVideo").empty();
+                        $("#showSearch").empty();
+                        $("#showComment").empty();
                         if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("showResult").innerHTML = this.responseText;
+                            document.getElementById("showComment").innerHTML = this.responseText;
                         }
                     };
                     xhttp.open("GET", "twitter.php?key=" + keyword, true);
@@ -71,6 +74,5 @@
                 }
             });
         </script>
- 
     </body>
 </html>
