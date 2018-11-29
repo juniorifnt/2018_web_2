@@ -1,6 +1,6 @@
 // Google API
-const API_KEY_SEARCH = "AIzaSyDUNJ-JUrweFdzcVhH2xCYmrfIaK-8b8o0";
-const cx = "006915378234751030454:8ur5gwuf5pg";
+const API_KEY_SEARCH = "AIzaSyBwdnMGnnef_olJQKcXr396eSmkCLGtrJs";
+const cx = "006915378234751030454:ytol-tifmki";
 
 // do a information list
 function showSearch(title, link, description) {
@@ -21,6 +21,8 @@ $("#submit").click(function() {
   	if(type == "Custom Search") {
   		$.get(URL, function({ items }, status) {
 				// get an information to do information list
+        $("#showVideo").empty();
+        $("#showComment").empty();
     		items.map(function(value) { 
 					// show data in index
       		$("#showSearch").append(
@@ -35,10 +37,11 @@ $("#submit").click(function() {
   	} else {
   		console.log("type error")
   	}
+})
+$("#keyword").change(function() {
+    //const text = $(this).val();
 
-    $("#keyword").change(function() {
-    const text = $(this).val();
-    $("#list").empty();
+    $("#showSearch").empty();
     items.map(function(value) { 
           // show data in index
           $("#showSearch").append(
@@ -50,4 +53,7 @@ $("#submit").click(function() {
           );
         });
   });
-})
+
+   
+
+

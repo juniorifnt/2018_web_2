@@ -20,6 +20,8 @@ $("#submit").click(function() {
     if(type == "Video") {
         $.get(URL, function({ items }, status) {
             console.log(items)
+            $("#showSearch").empty();
+            $("#showComment").empty();
             // get an information to do video list
             items.map(function(value) {
                 // show data in index
@@ -36,3 +38,17 @@ $("#submit").click(function() {
         console.log("type error")
     }
 })
+$("#keyword").change(function() {
+    //const text = $(this).val();
+    $("#showVideo").empty();
+    items.map(function(value) { 
+          // show data in index
+          $("#showVideo").append(
+            showSearch(
+             value.snippet.title,
+             value.id.videoId,
+             value.snippet.thumbnails
+            )
+          );
+        });
+  });
