@@ -1,7 +1,6 @@
 // Google API
-const API_KEY_SEARCH = "AIzaSyDUNJ-JUrweFdzcVhH2xCYmrfIaK-8b8o0";
-const cx = "006915378234751030454:8ur5gwuf5pg";
-
+const API_KEY_SEARCH = "AIzaSyBwdnMGnnef_olJQKcXr396eSmkCLGtrJs";
+const cx = "006915378234751030454:ytol-tifmki";
 
 // do a information list
 function showSearch(title, link, description) {
@@ -16,23 +15,43 @@ function showSearch(title, link, description) {
 $("#submit").click(function() {
 		let keyword = $("#keyword").val()
   	let type = $("#options").val();
+    console.log(keyword)
   	console.log(type)
   	const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY_SEARCH}&cx=${cx}&q=${keyword}`;
   	if(type == "Custom Search") {
-  			$.get(URL, function({ items }, status) {
-						// get an information to do information list
-    				items.map(function(value) { 
-								// show data in index
-      					$("#showResult").append(
-        						showSearch (
-          							value.title,
-          							value.snippet.URL,
-              					value.snippet.description
-        						)
-      					);
-    				});
-				});
+  		$.get(URL, function({ items }, status) {
+				// get an information to do information list
+        $("#showVideo").empty();
+        $("#showComment").empty();
+    		items.map(function(value) { 
+					// show data in index
+      		$("#showSearch").append(
+        		showSearch(
+          		value.title,
+          		value.snippet.URL,
+              value.snippet.description
+        		)
+      		);
+    		});
+			});
   	} else {
   			console.log("type error")
   	}
 })
+$("#keyword").change(function() {
+    //const text = $(this).val();
+    $("#showSearch").empty();
+    items.map(function(value) { 
+          // show data in index
+          $("#showSearch").append(
+            showVideo(
+             value.title,
+              value.snippet.URL,
+              value.snippet.description
+            )
+          );
+        });
+  });
+
+   
+

@@ -12,16 +12,20 @@ function showVideo(title, videoId, thumbnails) {
 }
 
 $("#submit").click(function() {
-    let keyword = $("#keyword").val();
-    let type = $("#options").val();
+    var keyword = $("#keyword").val();
+    var type = $("#options").val();
+    console.log(keyword) 
     console.log(type)
     const URL = `https://content.googleapis.com/youtube/v3/search?part=snippet&maxResults=21&q=${keyword}&type=video&key=${API_KEY_YOUTUBE}`;
     if(type == "Video") {
         $.get(URL, function({ items }, status) {
+            console.log(items)
+            $("#showSearch").empty();
+            $("#showComment").empty();
             // get an information to do video list
             items.map(function(value) {
                 // show data in index
-                $("#showResult").append(
+                $("#showVideo").append(
                     showVideo(
                         value.snippet.title,
                         value.id.videoId,
@@ -34,3 +38,17 @@ $("#submit").click(function() {
         console.log("type error")
     }
 })
+$("#keyword").change(function() {
+    //const text = $(this).val();
+    $("#showVideo").empty();
+    items.map(function(value) { 
+          // show data in index
+          $("#showVideo").append(
+            showVideo(
+             value.snippet.title,
+             value.id.videoId,
+             value.snippet.thumbnails
+            )
+          );
+        });
+  });
