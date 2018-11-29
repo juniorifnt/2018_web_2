@@ -12,8 +12,8 @@ function showVideo(title, videoId, thumbnails) {
 }
 
 $("#submit").click(function() {
-    var keyword = $("#keyword").val();
-    var type = $("#options").val();
+    let keyword = $("#keyword").val();
+    let type = $("#options").val();
     console.log(type)
     const URL = `https://content.googleapis.com/youtube/v3/search?part=snippet&maxResults=21&q=${keyword}&type=video&key=${API_KEY_YOUTUBE}`;
     if(type == "Video") {
@@ -21,7 +21,7 @@ $("#submit").click(function() {
             // get an information to do video list
             items.map(function(value) {
                 // show data in index
-                $("#showVideo").append(
+                $("#showResult").append(
                     showVideo(
                         value.snippet.title,
                         value.id.videoId,
