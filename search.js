@@ -6,9 +6,9 @@ const cx = "006915378234751030454:ytol-tifmki";
 function showSearch(title, link, description) {
   	return `
   	<div class="list">
-    <p style="color:red;"><b>Title: ${title}</b></p>
-    <p>URL: <a href="${link}"><b>${title}</b></a></p>
-    <p>Description: ${description} </p>
+    <h3 style="color:white; margin-left:25px;"><b>Title: ${title}</b></h3>
+    <p style="color:#F7DC6F; margin-left:20px;"><b>URL: <a href="${link}">${title}</b></a></p>
+    <p style="color:#82E0AA; margin-left:20px;"><b>Description:</b> ${description} </p>
   	</div>`;
 }
 
@@ -23,13 +23,14 @@ $("#submit").click(function() {
 				// get an information to do information list
         $("#showVideo").empty();
         $("#showComment").empty();
+        $("#showSearch").empty();
     		items.map(function(value) { 
 					// show data in index
       		$("#showSearch").append(
         		showSearch(
           		value.title,
           		value.snippet.URL,
-              value.snippet.description
+              value.snippet
         		)
       		);
     		});
@@ -38,20 +39,9 @@ $("#submit").click(function() {
   			console.log("type error")
   	}
 })
-$("#keyword").change(function() {
-    //const text = $(this).val();
-    $("#showSearch").empty();
-    items.map(function(value) { 
-          // show data in index
-          $("#showSearch").append(
-            showVideo(
-             value.title,
-              value.snippet.URL,
-              value.snippet.description
-            )
-          );
-        });
-  });
+
+
+
 
    
 
