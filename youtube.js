@@ -22,6 +22,7 @@ $("#submit").click(function() {
             console.log(items)
             $("#showSearch").empty();
             $("#showComment").empty();
+            $("#showVideo").empty();
             // get an information to do video list
             items.map(function(value) {
                 // show data in index
@@ -38,7 +39,7 @@ $("#submit").click(function() {
         console.log("type error")
     }
 })
-$("#keyword").change(function() {
+/*$("#keyword").change(function() {
     //const text = $(this).val();
     $("#showVideo").empty();
     items.map(function(value) { 
@@ -51,4 +52,4 @@ $("#keyword").change(function() {
             )
           );
         });
-  });
+  });*/
