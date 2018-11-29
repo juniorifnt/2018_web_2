@@ -1,4 +1,4 @@
-<? php
+<?php
     //import library
     require "twitteroauth/autoload.php";
     use Abraham\TwitterOAuth\TwitterOAuth;
@@ -8,12 +8,11 @@
     define("AccessToken","1066363490539995136-E0lD20m4hDZoIYFab3xswSZW0NC0yy");
     define("AccessTokenSecret","7gFEJcbkalXk8OnoZ4IrcXWdaZrIdUk6u6bMpbMGL1gQh");
 
-
     function show($result){
         foreach($result->statuses as $key => $value){
             echo "
             <div class=\"container\">
-                
+
             <table class=\"table\" border=\"1\">
             <thead>
             <td rowspan=\"2\"><img src=\"{$value->user->profile_image_url}\"></td>
@@ -23,10 +22,8 @@
             <td><p>{$value->text}</p></td>
             </tr>
             </thead>
-           
-           
-        </div>
-            ";
+            </div>
+
     }
 
     function search(array $keyword){
