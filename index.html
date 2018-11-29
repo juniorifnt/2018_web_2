@@ -3,6 +3,8 @@
 <html lang="en">
 </style>
     <head>
+        <meta charest="UTF-8">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -11,29 +13,33 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
         <title>Final Project</title>
     </head>
     
     <body>
         <div id="container">
             <header>
-                <h1>Search</h1>
+                <div class="page-header">
+                <h1>Search</h1>    
+                </div>
+                
             </header>
-            
             <section>
-                    <div class="fieldcontainer" >
-                        <input type="keyword" id="keyword">
-                        <br>
-
-                        <select id="options">
-                            <option type="customSearch">Custom Search</option>
-                            <option type="video">Video</option>
-                            <option type="commentnReview">Comment & Review</option>
+                <div class="fieldcontainer">
+                    <input type="keyword" id="keyword">
+                    <div class="form-group">
+                        <select class="selectpicker" id="options">
+                            <option type="customSearch"><i class="fab fa-google"></i>Custom Search</option>
+                            <option type="video"><i class="fab fa-youtube"></i>Video</option>
+                            <option type="commentnReview"><i class="fab fa-twitter"></i>Comment & Review</option>
                           </select>
-                        <button type="submit" id="submit" >Search</button>
+                    </div>
+                        <button type="submit" id="submit" class="btn btn-info">Search</button>
                     </div> 
-            </section>   
-        </div>
+            </section> 
+          
+     
 
         <!-- display -->
         <!--<div id="showResult"></div>-->
