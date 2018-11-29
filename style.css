@@ -1,8 +1,26 @@
-body {
-    background-color: black;
-    color: white;
+:focus {
+    outline: none;
 }
 
-.h1 {
-    font-size: 1em;
+body, html {
+    padding: 0 0;
+    width: 100%;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: white;
+    font-family:'Slabo 27px', serif;
+    /*font-family:'Roboto', sans-serif;*/
+}
+
+h2 /*barcode*/ {
+    font-size: 3em;
+    color: white;
+    font-family:'Libre Barcode 39 Extended', cursive;
 }
