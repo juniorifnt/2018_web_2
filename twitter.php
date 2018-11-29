@@ -13,7 +13,7 @@
             echo "
             <div class=\"container\">
 
-            <table class=\"table\" border=\"1\">
+            <table class=\"table\" >
             <thead>
             <td rowspan=\"2\"><img src=\"{$value->user->profile_image_url}\"></td>
             <td><h4>{$value->user->name}</h4></td>
