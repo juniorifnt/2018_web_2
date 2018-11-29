@@ -3,10 +3,10 @@
     require "twitteroauth/autoload.php";
     use Abraham\TwitterOAuth\TwitterOAuth;
     
-    define("APIKey","DpV03fA4Ljw2pBeLaeHEReHSb");
-    define("APISecretKey","3UIxpuH80RQkskLW3rLPKrSgmGWgnku0uGSG1vTXS9KSOdY9Kf");
-    define("AccessToken","1066363490539995136-E0lD20m4hDZoIYFab3xswSZW0NC0yy");
-    define("AccessTokenSecret","7gFEJcbkalXk8OnoZ4IrcXWdaZrIdUk6u6bMpbMGL1gQh");
+    const APIKey = "DpV03fA4Ljw2pBeLaeHEReHSb";
+    const APISecretKey = "3UIxpuH80RQkskLW3rLPKrSgmGWgnku0uGSG1vTXS9KSOdY9Kf";
+    const AccessToken = "1066363490539995136-E0lD20m4hDZoIYFab3xswSZW0NC0yy";
+    const AccessTokenSecret ="7gFEJcbkalXk8OnoZ4IrcXWdaZrIdUk6u6bMpbMGL1gQh";
 
     function show($result){
         foreach($result->statuses as $key => $value){
@@ -23,7 +23,8 @@
             </tr>
             </thead>
             </div>
-
+            ";
+        }
     }
 
     function search(array $keyword){
@@ -31,9 +32,9 @@
               return $twitter->get('search/tweets',$keyword);
     }
 
-    if(isset($_GET['keyword'])){
+    if(isset($_GET['key'])){
           $needed_data = array(
-            "q" => $_GET['keyword'],
+            "q" => $_GET['key'],
             "count" => 30,
             "result_type"=>"recent",
           );
