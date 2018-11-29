@@ -12,8 +12,8 @@ function showSearch(title, link, detail) {
 }
 
 $("#submit").click(function() {
-	var keyword = $("#keyword").val()
-  var type = $("#options").val();
+	let keyword = $("#keyword").val()
+  let type = $("#options").val();
     console.log(keyword)
     console.log(type)
     const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY_SEARCH}&cx=${cx}&q=${keyword}`;
