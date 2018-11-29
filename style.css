@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :focus {
     outline: none;
 }
@@ -61,4 +62,13 @@ h2 /*barcode*/ {
 #videos > div {
     width: 35%;
     margin: 2%;
+=======
+body {
+    background-color: #006C6C;
+    /*color: #FFFF9C;*/
+
+}
+.h1 {
+    font-size: 1em;
+>>>>>>> 6a9a13a8243a2281a60a3e09d3af7dd57c58421d
 }
