@@ -1,13 +1,14 @@
 // Google API
-const API_KEY_SEARCH = "AIzaSyDnAu44JqxQYij5Ex9Bz9owB43DuX-SqSY";
+const API_KEY_SEARCH = "AIzaSyDUNJ-JUrweFdzcVhH2xCYmrfIaK-8b8o0";
 const cx = "006915378234751030454:8ur5gwuf5pg";
 
 // do a information list
-function showSearch(title, link, detail) {
-  return `
+function showSearch(title, link, description) {
+   return `
   <div class="list">
-    <p>Title: ${title}</p>
-    <p>URL: ${link}</p>
+    <p style="color:red;"><b>Title: ${title}</b></p>
+    <p>URL: <a href="${link}"><b>${title}</b></a></p>
+    <p>Description: ${description} </p>
   </div>`;
 }
 
@@ -24,8 +25,9 @@ $("#submit").click(function() {
 					// show data in index
       		$("#showSearch").append(
         		showSearch(
-          		value.snippet.title,
-          		value.snippet.URL
+          		value.title,
+          		value.snippet.URL,
+              value.snippet.description
         		)
       		);
     		});
@@ -33,4 +35,19 @@ $("#submit").click(function() {
   	} else {
   		console.log("type error")
   	}
+
+    $("#keyword").change(function() {
+    const text = $(this).val();
+    $("#list").empty();
+    items.map(function(value) { 
+          // show data in index
+          $("#showSearch").append(
+            showSearch(
+              value.title,
+              value.snippet.URL,
+              value.snippet.description
+            )
+          );
+        });
+  });
 })
