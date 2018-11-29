@@ -8,10 +8,6 @@ body, html {
     background-color: black;
 }
 
-.container {
-    text-align: center;
-}
-
 h1 {
     font-size: 3em;
     color: white;
@@ -23,4 +19,46 @@ h2 /*barcode*/ {
     font-size: 3em;
     color: white;
     font-family:'Libre Barcode 39 Extended', cursive;
+}
+
+.container {
+    text-align: center;
+}
+
+.form-row {
+    margin: auto;
+}
+
+#videos {
+    width: 100%;
+}
+
+#videos > div {
+    width: 100%;
+    margin: auto;
+    padding-bottom: .5em;
+}
+
+#videos > div > p.name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    text-align: center;
+    
+}
+
+#videos > div > img {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#videos > div > p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+#videos > div {
+    width: 35%;
+    margin: 2%;
 }
