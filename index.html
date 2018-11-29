@@ -24,9 +24,9 @@
                         <br>
 
                         <select id="options">
-                            <option type="customSearch" >Custom Search</option>
-                            <option type="video" >Video</option>
-                            <option type="commentnReview" value="commentnReview">Comment & Review</option>
+                            <option type="customSearch">Custom Search</option>
+                            <option type="video">Video</option>
+                            <option type="commentnReview">Comment & Review</option>
                           </select>
                         <button type="submit" id="submit" >Search</button>
                     </div> 
@@ -40,7 +40,8 @@
         <div id="showComment"></div>
 
         <script src="youtube.js"></script>
-        <script src="search.js" ></script>  
+        <script src="search.js" ></script>
+          
         <script type="text/javascript">
             $("#submit").on("click",function(){
                 let keyword = $("#keyword").val();
@@ -49,17 +50,18 @@
                 //let type = $('#options').find(":selected").val();
                 console.log(type);
                 var xhttp = new XMLHttpRequest();
-                if(type == "commentnReview") {
+                if(type == "Comment & Review") {
                     xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("showComment").innerHTML = this.responseText;
-                    }
-                };
-                xhttp.open("GET", "twitter.php?key=" + keyword, true);
-                xhttp.send();
-              }
-            }
-            );
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("showComment").innerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open("GET", "twitter.php?key=" + keyword, true);
+                    xhttp.send();
+                } else {
+                    console.log("type error")
+                }
+            });
         </script>
  
     </body>

@@ -1,5 +1,5 @@
 // Google API
-const API_KEY_SEARCH = "AIzaSyDnAu44JqxQYij5Ex9Bz9owB43DuX-SqSY";
+const API_KEY_SEARCH = "AIzaSyBwdnMGnnef_olJQKcXr396eSmkCLGtrJs";
 const cx = "006915378234751030454:8ur5gwuf5pg";
 
 // do a information list
@@ -14,7 +14,6 @@ function showSearch(title, link, detail) {
 $("#submit").click(function() {
 	let keyword = $("#keyword").val()
   let type = $("#options").val();
-    console.log(keyword)
     console.log(type)
     const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY_SEARCH}&cx=${cx}&q=${keyword}`;
   	if(type == "Custom Search") {
