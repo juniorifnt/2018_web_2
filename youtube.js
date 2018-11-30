@@ -4,11 +4,11 @@ const API_KEY_YOUTUBE = "AIzaSyBGSidh8WB4tOLGGx_xOEa75yAya0FW62Q";
 // do a video list
 function showVideo(title, videoId, thumbnails) {
     return `
-    <div class="card" style="width: 45rem;">
-        <img class="card-img-top" src="${thumbnails.medium.url}" alt="Card image cap">
+    <div class="card" style="width: 70rem;">
+        <img class="card-img-top" style="width: 35rem;" src="${thumbnails.medium.url}" alt="Card image cap">
         <div class="card-body">
-            <p class="card-text" style="color:white;"><font size="4.5">Title: ${title}
-            <a href="http://www.youtube.com/embed/${videoId}" class="btn btn-primary">LINK</a></p>
+            <p class="card-text"><font size="4.5">${title}<\p>
+            <a href="http://www.youtube.com/embed/${videoId}" class="btn btn-primary">LINK</a>
         </div>
     </div>`;   
 }
