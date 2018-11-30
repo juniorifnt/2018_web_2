@@ -29,7 +29,7 @@ $("#submit").click(function() {
       		$("#showSearch").append(
         		showSearch(
           		value.title,
-          		value.snippet.URL,
+          		value.link,
               value.snippet
         		)
       		);
