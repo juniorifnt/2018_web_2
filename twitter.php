@@ -11,19 +11,16 @@
     function show($result){
         foreach($result->statuses as $key => $value){
             echo "
-            <div class=\"container\">
-
-            <table class=\"table\" >
-            <thead>
-            <td rowspan=\"2\"><img src=\"{$value->user->profile_image_url}\"></td>
-            <td><h4>{$value->user->name}</h4></td>
-            </tr>
-            <tr>
-            <td><p>{$value->text}</p></td>
-            </tr>
-            </thead>
-            </div>
-            ";
+                <div class=\"card\">
+                    <img class=\"rounded-circle\" src=\"{$value->user->profile_image_url}\" alt=\"Card image cap\">
+                    <div class=\"card-header\">{$value->user->name}</div>
+                    <div class=\"card-body\">
+                        <blockquote class=\"blockquote mb-0\">
+                            <p>{$value->text}</p>
+                        </blockquote>
+                    </div>
+                </div>
+                ";
         }
     }
     function search(array $keyword){

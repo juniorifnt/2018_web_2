@@ -17,7 +17,7 @@ h1 {
 
 h2 /*barcode*/ {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2em;
     color: white;
     font-family:'Libre Barcode 39 Extended', cursive;
 }
@@ -28,9 +28,15 @@ h2 /*barcode*/ {
     background-color: black;
     position: relative;
     flex-wrap: wrap;
+    font-family: 'Nunito', sans-serif;
 }
 
-.card {
-    margin-right: 50;
-    margin-left: 50;
+.card img.card-img-top {
+    width: 100%;
 }
+
+.card img.rounded-circle {
+    width: 5%;
+}
+
+
