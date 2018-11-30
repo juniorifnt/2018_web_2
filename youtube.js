@@ -4,11 +4,16 @@ const API_KEY_YOUTUBE = "AIzaSyBGSidh8WB4tOLGGx_xOEa75yAya0FW62Q";
 // do a video list
 function showVideo(title, videoId, thumbnails) {
     return `
-    <div class="videos">
-    <p>Title: ${title}</p>
-    <img src="${thumbnails.high.url}">
-    <p>URL: <a href="http://www.youtube.com/embed/${videoId}">www.youtube.com/embed/${videoId}</a></p>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${thumbnails.medium.url}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Title: ${title}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="http://www.youtube.com/embed/${videoId}" class="btn btn-primary">www.youtube.com/embed/${videoId}</a>
+        </div>
     </div>`;
+
+    
 }
 
 $("#submit").click(function() {
