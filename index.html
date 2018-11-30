@@ -6,6 +6,7 @@
         <meta charest="UTF-8">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended|Roboto|Slabo+27px" >
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -18,33 +19,39 @@
     </head>
     
     <body>
-        <div id="container">
+        <div class="container">
             <header>
-                <div class="page-header">
-                <h1>Search</h1>    
-                </div>
-                
+                <h1>Academic Conferrence Search</h1> 
+                <h2>Academic Conferrence Search</h2>                     
             </header>
-            <section>
-                <div class="fieldcontainer">
-                    <input type="keyword" id="keyword">
-                    <div class="form-group">
-                        <select class="selectpicker" id="options">
-                            <option type="customSearch"><i class="fab fa-google"></i>Custom Search</option>
-                            <option type="video"><i class="fab fa-youtube"></i>Video</option>
-                            <option type="commentnReview"><i class="fab fa-twitter"></i>Comment & Review</option>
-                          </select>
-                    </div>
-                        <button type="submit" id="submit" class="btn btn-info">Search</button>
-                    </div> 
-            </section> 
-           
+
+            <div class="form-row" align="center">
+                <div class="form-group col-md-2"></div>
+                <div class="form-group col-md-2">
+                    <select id="options" class="form-control">
+                        <option selected> Choose... </option>
+                        <option type="customSearch">Custom Search</option>
+                        <option type="video">Video</option>
+                        <option type="commentnReview">Comment & Review</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-5">
+                     <input type="keyword" id="keyword" class="form-control">  
+                </div>
+                <div class="form-group col-md-1">
+                    <button type="submit" id="submit" class="btn btn-light">Search</button>
+                </div>
+            </div>
+        </div>
 
         <!-- display -->
         <!--<div id="showResult"></div>-->
-        <div id="showSearch"></div>
-        <div id="showVideo"></div>
-        <div id="showComment"></div>
+        <div class="container">
+            <div id="showSearch" align="center"></div>
+            <div id="showVideo" align="center"></div>
+            <div id="showComment" align="center"></div>
+        </div>
+        
         
         <script src="youtube.js"></script>
         <script src="search.js" ></script>    
