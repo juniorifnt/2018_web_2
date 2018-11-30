@@ -5,7 +5,7 @@
 body, html {
     padding: 0 0;
     width: 100%;
-    background-color: black;
+    background-color: green;
 }
 
 h1 {
@@ -22,43 +22,42 @@ h2 /*barcode*/ {
 }
 
 .container {
+    background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-left: 10vw;
     text-align: center;
 }
 
-.form-row {
-    margin: auto;
+#showVideo {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#videos {
+#showVideo > div {
     width: 100%;
+    margin: auto;   
 }
 
-#videos > div {
-    width: 100%;
-    margin: auto;
-    padding-bottom: .5em;
-}
-
-#videos > div > p.name {
-    font-family: 'Roboto Slab', serif;
+#showVideo > div > p.title {
+    font-family:'Roboto', sans-serif;
     font-size: 18px;
     text-align: center;
-    
+    color: white;
 }
 
-#videos > div > img {
-    width: 70%;
+#showVideo > div > img {
+    display: block;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#videos > div > p {
-    font-family: 'Roboto Slab', serif;
+#showvideo > div > p {
+    font-family:'Roboto', sans-serif;
     font-size: 15px;
     text-align: center;
-}
-
-#videos > div {
-    width: 35%;
-    margin: 2%;
+    color: white;
 }
