@@ -39,7 +39,7 @@ $("#submit").click(function() {
 			});
   	} 
 })
-//สวยมาก
+
 
 
 

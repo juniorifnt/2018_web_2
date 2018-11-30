@@ -8,7 +8,8 @@ function showVideo(title, videoId, thumbnails) {
         <img class="card-img-top" style="width: 35rem;" src="${thumbnails.medium.url}" alt="Card image cap">
         <div class="card-body">
             <p class="card-text"><font size="4.5">${title}<\p>
-            <a href="http://www.youtube.com/embed/${videoId}" class="btn btn-primary">LINK</a>
+            <button type="button" class="btn btn-secondary"><a href="http://www.youtube.com/embed/${videoId}">LINK</a></button>
+
         </div>
     </div>`;   
 }

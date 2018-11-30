@@ -10,9 +10,9 @@ body, html {
 h1 {
     text-align: center;
     font-size: 3em;
+    font-weight: 600;
     color: white;
-    font-family:'Slabo 27px', serif;
-    /*font-family:'Roboto', sans-serif;*/
+    font-family: 'Megrim', cursive;
 }
 
 h2 /*barcode*/ {
