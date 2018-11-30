@@ -4,10 +4,11 @@
 
 body, html {
     width: 100%;
-    background-color: whitesmoke;
+    background-color: black;
 }
 
 h1 {
+    margin-top: 50px;
     text-align: center;
     font-size: 3em;
     font-weight: 600;
@@ -20,9 +21,11 @@ h2 /*barcode*/ {
     font-size: 2em;
     color: white;
     font-family:'Libre Barcode 39 Extended', cursive;
+    margin-bottom: 40px;
 }
 
 .container {
+    padding: 20px auto;
     width: 100%;
     text-align: center;
     background-color: black;
