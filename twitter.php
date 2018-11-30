@@ -11,13 +11,11 @@
     function show($result){
         foreach($result->statuses as $key => $value){
             echo "
-                <div class=\"card\">
-                    <img class=\"rounded-circle\" src=\"{$value->user->profile_image_url}\" alt=\"Card image cap\">
-                    <div class=\"card-header\">{$value->user->name}</div>
+                <div class=\"card\" style=\"width: 70rem;\">
+                    <img style=\"width: 10rem;\" class=\"rounded-circle\" src=\"{$value->user->profile_image_url}\" alt=\"Card image cap\">
                     <div class=\"card-body\">
-                        <blockquote class=\"blockquote mb-0\">
-                            <p>{$value->text}</p>
-                        </blockquote>
+                        <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"4.5\">{$value->user->name}</h5>
+                        <p class=\"card-text\"><font size=\"3\">{$value->text}</p>
                     </div>
                 </div>
                 ";

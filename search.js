@@ -4,12 +4,14 @@ const cx = "006915378234751030454:ytol-tifmki";
 
 // do a information list
 function showSearch(title, link, description) {
-  	return `
-  	<div class="list">
-    <h3 style="color:white; margin-left:25px;"><b>Title: ${title}</b></h3>
-    <p style="color:#F7DC6F; margin-left:20px;"><b>URL: <a href="${link}">${title}</b></a></p>
-    <p style="color:#82E0AA; margin-left:20px;"><b>Description:</b> ${description} </p>
-  	</div>`;
+		return `
+		<div class="card" style="width: 70rem;">
+				<div class="card-body">
+						<h5 class="card-title" style="font-weight:bolder"><font size="4.5">${title}</h5>
+						<p class="card-text"><font size="3">${description}</p>
+            <a href="${link}">${title}</b></a>
+        </div>
+    </div>`;   
 }
 
 $("#submit").click(function() {
