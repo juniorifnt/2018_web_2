@@ -4,8 +4,8 @@ const API_KEY_YOUTUBE = "AIzaSyBGSidh8WB4tOLGGx_xOEa75yAya0FW62Q";
 // do a video list
 function showVideo(title, videoId, thumbnails) {
     return `
-    <div>
-    <p class="title">Title: ${title}</p>
+    <div class="videos">
+    <p>Title: ${title}</p>
     <img src="${thumbnails.high.url}">
     <p>URL: <a href="http://www.youtube.com/embed/${videoId}">www.youtube.com/embed/${videoId}</a></p>
     </div>`;

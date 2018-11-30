@@ -5,30 +5,37 @@
 body, html {
     padding: 0 0;
     width: 100%;
-    background-color: green;
 }
 
 h1 {
-    font-size: 3em;
+    text-align: center;
+    font-size: 2.5em;
     color: white;
     font-family:'Slabo 27px', serif;
     /*font-family:'Roboto', sans-serif;*/
 }
 
 h2 /*barcode*/ {
-    font-size: 3em;
+    text-align: center;
+    font-size: 2em;
     color: white;
     font-family:'Libre Barcode 39 Extended', cursive;
 }
 
 .container {
-    background-color: green;
+    text-align: center;
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
-    width: 80vw;
-    margin-left: 10vw;
-    margin-left: 10vw;
-    text-align: center;
+}
+
+.videos {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+  
+.videos:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #showVideo {
@@ -38,26 +45,20 @@ h2 /*barcode*/ {
 
 #showVideo > div {
     width: 100%;
-    margin: auto;   
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: auto;  
 }
 
-#showVideo > div > p.title {
-    font-family:'Roboto', sans-serif;
-    font-size: 18px;
+#showVideo > div > p{
     text-align: center;
+    font-family:'Roboto', sans-serif;
+    font-size: 1em;
     color: white;
 }
 
 #showVideo > div > img {
     display: block;
-    width: 50%;
     margin-left: auto;
     margin-right: auto;
-}
-
-#showvideo > div > p {
-    font-family:'Roboto', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    color: white;
 }
