@@ -1,5 +1,5 @@
 // Google API
-const API_KEY_SEARCH = "AIzaSyBwdnMGnnef_olJQKcXr396eSmkCLGtrJs";
+const API_KEY_SEARCH = "AIzaSyB1ejMqAdncJDuvHd-ykLiB2cw70-yRa4c";
 const cx = "006915378234751030454:ytol-tifmki";
 
 // do a information list
