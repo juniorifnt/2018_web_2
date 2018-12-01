@@ -27,7 +27,6 @@
                         <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"4.5\">{$value->user->name}</h5>
                         <h5 class=\"card-title\" ><font size=\"4\">@{$value->user->screen_name}</h5>
                         <p class=\"card-text\"><font size=\"3\">{$value->text}</p>
-                        
                         <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"4.5\">{$date}</h5>
                     </div>
                 </div>

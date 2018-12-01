@@ -26,7 +26,8 @@ $("#submit").click(function() {
 				//set every search result as empty before show search result from google 
         $("#showVideo").empty();
         $("#showComment").empty();
-        $("#showSearch").empty();
+				$("#showSearch").empty();
+				// get an information to do search list
     		items.map(function(value) { 
 					// show data in index
       		$("#showSearch").append(
@@ -38,7 +39,9 @@ $("#submit").click(function() {
       		);
     		});
 			});
-  	} 
+  	}else {
+			console.log("type error")
+	} 
 })
 
 

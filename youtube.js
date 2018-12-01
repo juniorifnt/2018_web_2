@@ -24,6 +24,7 @@ $("#submit").click(function() {
     if(type == "Video") {
         $.get(URL, function({ items }, status) {
             console.log(items)
+            //set every search result as empty before show search result from youtube
             $("#showSearch").empty();
             $("#showComment").empty();
             $("#showVideo").empty();
