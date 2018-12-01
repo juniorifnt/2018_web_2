@@ -19,6 +19,14 @@
     </head>
     
     <body>
+        
+    <?php
+        // Start PHP Session
+        session_start();
+        // Set Session value  
+        $_SESSION['index'] = true;
+    ?>
+
         <div class="container">
             <header>
                 <h1 align="center">Academic Conference Search</h1> 
