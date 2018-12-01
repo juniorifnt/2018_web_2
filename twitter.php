@@ -8,27 +8,22 @@
     const APISecretKey = "JQaV3pMaZayy7fW9ibyKVxoXMTCW6JbdvfeweMpzjP1rSC0BJ8";
     const AccessToken = "1859145668-yKmxMWFE8ir92ZDU7jDAVIZ3ijJrxOd3BC83ip4";
     const AccessTokenSecret ="YjfsRy3OsZ3rm770VslUSTWqQVarD7PrACNYN5xmFkgF8";
-
     //session resume from index page
     session_start();
-
     $count_negative = 0;
     $count_positive = 0;
     $count_neutral = 0;
     
-
     $positive_txt=file_get_contents("Positive.txt");
     $negative_txt=file_get_contents("Negative.txt");
     $negative=explode("\n",$negative_txt);
     $positive=explode("\n",$positive_txt);
     //print_r($negative) ;
-
     $dataPoints = array(
         array("label"=> "Negative", "y"=>$count_negative),
         array("label"=> "Positive", "y"=> $count_positive),
         array("label"=> "Neutral", "y"=> $count_neutral),
     );
-
     //This function is called to show result of search result
     function show($result){
         foreach($result->statuses as $key => $value){
@@ -86,13 +81,11 @@
     //echo $count_positive;
     //echo $count_neutral;
     }
-
     //Search for keyword and return result by requesting from twitter
     function search(array $keyword){
               $twitter = new TwitterOAuth(APIKey,APISecretKey,AccessToken,AccessTokenSecret);
               return $twitter->get('search/tweets',$keyword);
     }
-
     //check if session is setted from index or not
     if(!isset($_SESSION['index'])){
         //if not show this message
@@ -100,17 +93,14 @@
     }else{
         //if yes continue do the following
     if(isset($_GET['key'])){
-
         //array of parameter that need to send to twitter
           $needed_data = array(
             "q" => $_GET['key'],
             "count" => 30,
             "result_type"=>"recent",
           );
-
         //result after search
           $result = search($needed_data);
-
         //showing the result
           show($result,$negative,$positive);
     }
@@ -126,20 +116,20 @@
 window.onload = function () {
  
 var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	exportEnabled: true,
-	title:{
-		text: "Sentiment Analysis"
-	},
-	data: [{
-		type: "pie",
-		showInLegend: "true",
-		legendText: "{label}",
-		indexLabelFontSize: 16,
-		indexLabel: "{label} - #percent%",
-		yValueFormatString: "฿#,##0",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
+    animationEnabled: true,
+    exportEnabled: true,
+    title:{
+        text: "Sentiment Analysis"
+    },
+    data: [{
+        type: "pie",
+        showInLegend: "true",
+        legendText: "{label}",
+        indexLabelFontSize: 16,
+        indexLabel: "{label} - #percent%",
+        yValueFormatString: "฿#,##0",
+        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
 });
 chart.render();
  

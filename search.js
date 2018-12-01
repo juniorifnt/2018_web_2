@@ -1,6 +1,6 @@
 // Google API and cx number that will show certain websites
 const API_KEY_SEARCH = "AIzaSyB1ejMqAdncJDuvHd-ykLiB2cw70-yRa4c";
-const cx = "006915378234751030454:ytol-tifmki";
+const cx = "006915378234751030454:atr5_bcpryw";
 
 //This function is called to show result of search result
 function showSearch(title, link, description) {
