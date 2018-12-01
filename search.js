@@ -1,8 +1,8 @@
-// Google API
+// Google API and cx number that will show certain websites
 const API_KEY_SEARCH = "AIzaSyB1ejMqAdncJDuvHd-ykLiB2cw70-yRa4c";
 const cx = "006915378234751030454:atr5_bcpryw";
 
-// do a information list
+//This function is called to show result of search result
 function showSearch(title, link, description) {
 		return `
 		<div class="card" style="width: 70rem;">
@@ -14,6 +14,7 @@ function showSearch(title, link, description) {
     </div>`;   
 }
 
+//When submit and select this search option will show the result by the following
 $("#submit").click(function() {
 		let keyword = $("#keyword").val()
   	let type = $("#options").val();
@@ -22,10 +23,11 @@ $("#submit").click(function() {
   	const URL = `https://www.googleapis.com/customsearch/v1?key=${API_KEY_SEARCH}&cx=${cx}&q=${keyword}`;
   	if(type == "Custom Search") {
   		$.get(URL, function({ items }, status) {
-				// get an information to do information list
+				//set every search result as empty before show search result from google 
         $("#showVideo").empty();
         $("#showComment").empty();
-        $("#showSearch").empty();
+				$("#showSearch").empty();
+				// get an information to do search list
     		items.map(function(value) { 
 					// show data in index
       		$("#showSearch").append(
@@ -37,7 +39,9 @@ $("#submit").click(function() {
       		);
     		});
 			});
-  	} 
+  	}else {
+			console.log("type error")
+	} 
 })
 
 

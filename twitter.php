@@ -68,18 +68,21 @@
         {
             $check_positive=strpos($text,$word);
 	        if(gettype($check_positive) != "boolean"){
-		        $positive_word++;
+		        $positive_word=$positive_word+1;
 	        }	
         }
         if($negative_word>$positive_word){
             $count_negative++;
         }else if($positive_word>$negative_word){
-            $count_positive++;
+            $count_positive=$count_positive+1;
         }else{
-            $count_neutral++;
+            $count_neutral=$count_neutral+1;
         }
+        echo "<br>";
+        echo $count_neutral;
+        ;
     }
-
+    
     //Search for keyword and return result by requesting from twitter
     function search(array $keyword){
               $twitter = new TwitterOAuth(APIKey,APISecretKey,AccessToken,AccessTokenSecret);
@@ -123,12 +126,14 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		text: "Sentiment Analysis"
 	},
 	data: [{
-		type: "line",
+		type: "pie",
 		showInLegend: "true",
 		legendText: "{label}",
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - #percent%",
 		yValueFormatString: "฿#,##0",
+        color: red;
+
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
