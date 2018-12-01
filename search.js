@@ -1,6 +1,6 @@
 // Google API
 const API_KEY_SEARCH = "AIzaSyB1ejMqAdncJDuvHd-ykLiB2cw70-yRa4c";
-const cx = "006915378234751030454:ytol-tifmki";
+const cx = "006915378234751030454:atr5_bcpryw";
 
 // do a information list
 function showSearch(title, link, description) {
