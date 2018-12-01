@@ -15,13 +15,11 @@
     $count_negative = 0;
     $count_positive = 0;
     $count_neutral = 0;
-    
 
     $positive_txt=file_get_contents("Positive.txt");
     $negative_txt=file_get_contents("Negative.txt");
     $negative=explode("\n",$negative_txt);
     $positive=explode("\n",$positive_txt);
-    //print_r($negative) ;
 
     $dataPoints = array(
         array("label"=> "Negative", "y"=>$count_negative),
@@ -30,14 +28,13 @@
     );
 
     //This function is called to show result of search result
-    function show($result){
+    function show($result,$negative,$positive){
         foreach($result->statuses as $key => $value){
             
             //date format 
             $date=date("l M j, Y \- g:ia",strtotime($value->user->created_at));
-            $text="";
             $text=$value->text;
-            SentimentAnalysis($text);
+            SentimentAnalysis($text,$negative,$positive);
             //part of showing the result on the screen
             echo "
                 <div class=\"card\" style=\"width: 70rem;\">
@@ -53,12 +50,10 @@
         }
     }
 
-    function SentimentAnalysis($text){
+    function SentimentAnalysis($text,$negative,$positive){
         $negative_word=0;
         $positive_word=0;
-        echo $negative_word;
-        echo $positive_word;
-        global $count_negative,$count_positive,$count_neutral,$negative,$positive;
+        global $count_negative,$count_positive,$count_neutral;
         foreach($negative as $word)
         {
             $check_negative=strpos($text,$word);
@@ -74,16 +69,12 @@
 	        }	
         }
         if($negative_word>$positive_word){
-            $count_negative=$count_negative+1;
+            $count_negative++;
         }else if($positive_word>$negative_word){
-            $count_positive=$count_positive+1;
+            $count_positive++;
         }else{
-            $count_neutral=$count_neutral+1;
+            $count_neutral++;
         }
-        echo"<br>";
-        echo $count_negative;
-    echo $count_positive;
-    echo $count_neutral;
     }
 
     //Search for keyword and return result by requesting from twitter
@@ -114,9 +105,7 @@
           show($result,$negative,$positive);
     }
     }   
-    echo $count_negative;
-    echo $count_positive;
-    echo $count_neutral;
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -146,7 +135,7 @@ chart.render();
 </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;   z-index: 110;"></div>
+<div id="chartContainer" style="height: 370px; width: 100%;  background-color: white; z-index: 110;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>                              
