@@ -1,7 +1,7 @@
 // Youtube API
 const API_KEY_YOUTUBE = "AIzaSyBGSidh8WB4tOLGGx_xOEa75yAya0FW62Q";
 
-// do a video list
+//This function is called to show result of search result
 function showVideo(title, videoId, thumbnails) {
     return `
     <div class="card" style="width: 70rem;">
@@ -14,6 +14,7 @@ function showVideo(title, videoId, thumbnails) {
     </div>`;   
 }
 
+//When submit and select this search option will show the result by the following
 $("#submit").click(function() {
     var keyword = $("#keyword").val();
     var type = $("#options").val();
