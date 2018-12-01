@@ -46,31 +46,32 @@
                         <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"4.5\">{$value->user->name}</h5>
                         <h5 class=\"card-title\" ><font size=\"4\">@{$value->user->screen_name}</h5>
                         <p class=\"card-text\"><font size=\"3\">{$value->text}</p>
-                        <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"4.5\">{$date}</h5>
+                        <h5 class=\"card-title\" style=\"font-weight:bolder\"><font size=\"3\">{$date}</h5>
                     </div>
                 </div>
                 ";
         }
     }
 
+    //bonus
     function SentimentAnalysis($text){
         $negative_word=0;
         $positive_word=0;
-        echo $negative_word;
-        echo $positive_word;
+        //echo $negative_word;
+        //echo $positive_word;
         global $count_negative,$count_positive,$count_neutral,$negative,$positive;
         foreach($negative as $word)
         {
             $check_negative=strpos($text,$word);
 	        if(gettype($check_negative) != "boolean"){
-		        $negative_word++;
+		        $negative_word=$negative_word+1;
 	        }	
         }
         foreach($positive as $word)
         {
             $check_positive=strpos($text,$word);
 	        if(gettype($check_positive) != "boolean"){
-		        $positive_word++;
+		        $positive_word=$positive_word+1;
 	        }	
         }
         if($negative_word>$positive_word){
@@ -80,10 +81,10 @@
         }else{
             $count_neutral=$count_neutral+1;
         }
-        echo"<br>";
-        echo $count_negative;
-    echo $count_positive;
-    echo $count_neutral;
+        //echo"<br>";
+        //echo $count_negative;
+    //echo $count_positive;
+    //echo $count_neutral;
     }
 
     //Search for keyword and return result by requesting from twitter
@@ -114,9 +115,9 @@
           show($result,$negative,$positive);
     }
     }   
-    echo $count_negative;
-    echo $count_positive;
-    echo $count_neutral;
+    //echo $count_negative;
+    //echo $count_positive;
+    //echo $count_neutral;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -146,7 +147,7 @@ chart.render();
 </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;   z-index: 110;"></div>
+<div  style="height: 370px; width: 100%;   z-index: 110;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>                              

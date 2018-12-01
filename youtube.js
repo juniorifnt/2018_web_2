@@ -43,4 +43,4 @@ $("#submit").click(function() {
     } else {
         console.log("type error")
     }
-})
+});
